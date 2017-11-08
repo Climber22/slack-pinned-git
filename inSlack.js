@@ -18,12 +18,12 @@ function setChannelsName(){
 }
 
 function getChannelIdsFromName(){
-	let requestURLForGetChannelList = getChannelListApiUrl + "?token" + slackApiToken;
-	let returnValue UrlFetchApp.fetch(requestURLForGetChannelList);
-	let channelList = JSON.parse(returnValue.getContentText()).channels;
+	var requestURLForGetChannelList = getChannelListApiUrl + "?token=" + slackApiToken;
+	var returnValue UrlFetchApp.fetch(requestURLForGetChannelList);
+	var channelList = JSON.parse(returnValue.getContentText()).channels;
 
-	for(let i = 0, i < channels.length, i++){
-		for(let j = 0; j < channelList.length; i++){
+	for(var i = 0, i < channels.length, i++){
+		for(var j = 0; j < channelList.length; i++){
 			if(channes[i].name == channelList[j].name){
 				channels[i].id = channelList[j].id;
 				break;
@@ -33,10 +33,10 @@ function getChannelIdsFromName(){
 }
 
 function getPinnedItems(){
-	for(let i = 0, i < channels.length, i++){
-		let requestUrlForGetPinnedItem = getPinnedItem + "?token" + slackApiToken + "?channel" + channels[i].id;
-		let returnValue = UrlFetchApp.fetch(requestUrlForGetPinnedItem);
-		let channels[i].pinnedItems = JSON.parse(returnValue.getContentText()).items;
+	for(var i = 0, i < channels.length, i++){
+		var requestUrlForGetPinnedItem = getPinnedItem + "?token=" + slackApiToken + "?channel=" + channels[i].id;
+		var returnValue = UrlFetchApp.fetch(requestUrlForGetPinnedItem);
+		var channels[i].pinnedItems = JSON.parse(returnValue.getContentText()).items;
 	}
 }
 

@@ -19,7 +19,7 @@ function setChannelsName(){
 
 function getChannelIdsFromName(){
 	var requestURLForGetChannelList = getChannelListApiUrl + "?token=" + slackApiToken;
-	var returnValue UrlFetchApp.fetch(requestURLForGetChannelList);
+	var returnValue = UrlFetchApp.fetch(requestURLForGetChannelList);
 	var channelList = JSON.parse(returnValue.getContentText()).channels;
 
 	for(var i = 0, i < channels.length, i++){

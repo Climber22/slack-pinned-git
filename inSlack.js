@@ -24,7 +24,7 @@ function getChannelIdsFromName(){
 
 	for(var i = 0; i < channels.length; i++){
 		for(var j = 0; j < channelList.length; i++){
-			if(channes[i].name == channelList[j].name){
+			if(channels[i].name == channelList[j].name){
 				channels[i].id = channelList[j].id;
 				break;
 			}

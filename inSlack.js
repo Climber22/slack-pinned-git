@@ -23,7 +23,7 @@ function getChannelIdsFromName(){
 	var channelList = JSON.parse(returnValue.getContentText()).channels;
 
 	for(var i = 0; i < channels.length; i++){
-		for(var j = 0; j < channelList.length; i++){
+		for(var j = 0; j < channelList.length; j++){
 			if(channels[i].name == channelList[j].name){
 				channels[i].id = channelList[j].id;
 				break;

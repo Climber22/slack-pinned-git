@@ -10,7 +10,7 @@ function processingInSlack() {
 function setChannelsName(){
 	//one
 	channels[0] = {};
-	channels[0].name = "";
+	channels[0].name = "times_acchan";
 
 	//two...
 	// channels[1] = {};

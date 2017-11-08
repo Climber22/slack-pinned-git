@@ -34,7 +34,7 @@ function getChannelIdsFromName(){
 
 function getPinnedItems(){
 	for(var i = 0; i < channels.length; i++){
-		var requestUrlForGetPinnedItem = getPinnedItem + "?token=" + slackApiToken + "?channel=" + channels[i].id;
+		var requestUrlForGetPinnedItem = getPinnedItemApiUrl + "?token=" + slackApiToken + "&channel=" + channels[i].id;
 		var returnValue = UrlFetchApp.fetch(requestUrlForGetPinnedItem);
 		channels[i].pinnedItems = JSON.parse(returnValue.getContentText()).items;
 	}
